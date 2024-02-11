@@ -4,13 +4,14 @@
 
   <div 
     class="card"
-    @click="flipCard"
+    @click="isFlipped = !isFlipped"
+    :class="{ flipped: isFlipped }"
   >
-    <div class="content" :class="{ flipped: isFlipped }">
+    <div class="content">
       <div class="front">
         Front
       </div>
-      <div class="back" @click.stop="flipCardBack">
+      <div class="back">
         Back!
       </div>
     </div>
@@ -29,14 +30,6 @@ export default {
     return {
       isFlipped: false
     };
-  },
-  methods: {
-    flipCard() {
-      this.isFlipped = !this.isFlipped;
-    },
-    flipCardBack(event) {
-      this.isFlipped = false;
-    }
   }
 }
 </script>
@@ -84,6 +77,10 @@ export default {
 .back {
   background: #03446A;
   color: white;
+  transform: rotateY(180deg);
+}
+
+.flipped .content {
   transform: rotateY(180deg);
 }
 </style>
