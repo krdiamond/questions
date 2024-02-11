@@ -35,7 +35,6 @@ export default {
       this.isFlipped = !this.isFlipped;
     },
     flipCardBack(event) {
-      event.stopPropagation(); // Prevent click event from bubbling up to the parent card
       this.isFlipped = false;
     }
   }
