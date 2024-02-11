@@ -10,7 +10,7 @@
       <div class="front">
         Front
       </div>
-      <div class="back">
+      <div class="back" @click.stop="flipCardBack">
         Back!
       </div>
     </div>
@@ -33,6 +33,10 @@ export default {
   methods: {
     flipCard() {
       this.isFlipped = !this.isFlipped;
+    },
+    flipCardBack(event) {
+      event.stopPropagation(); // Prevent click event from bubbling up to the parent card
+      this.isFlipped = false;
     }
   }
 }
