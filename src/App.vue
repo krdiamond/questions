@@ -4,16 +4,15 @@
 
   <div 
     class="card"
-    @click="isFlipped = !isFlipped"
     @mouseenter="isFlipped = !isFlipped"
     @mouseleave="isFlipped = !isFlipped"
     :class="{ flipped: isFlipped }"
   >
     <div class="content">
-      <div class="front">
+      <div class="front" @click="isFlipped = true">
         Front
       </div>
-      <div class="back">
+      <div class="back" @click="isFlipped = false">
         Back!
       </div>
     </div>
