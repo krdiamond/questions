@@ -5,6 +5,8 @@
   <div 
     class="card"
     @click="isFlipped = !isFlipped"
+    @mouseenter="isFlipped = !isFlipped"
+    @mouseleave="isFlipped = !isFlipped"
     :class="{ flipped: isFlipped }"
   >
     <div class="content">
@@ -56,9 +58,11 @@ export default {
   transform-style: preserve-3d;
 }
 
-.card:hover .content {
-  transform: rotateY(180deg);
-}
+/* @media (min-width: 768px) {
+  .card:hover .content {
+    transform: rotateY(180deg);
+  }
+} */
 
 .front,
 .back {
